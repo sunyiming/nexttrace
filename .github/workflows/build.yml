@@ -45,6 +45,8 @@ jobs:
             dist/nexttrace_openbsd_arm64
             dist/nexttrace_freebsd_amd64
             dist/nexttrace_freebsd_arm64
+            dist/nexttrace_windows_386.exe
+            dist/nexttrace_windows_amd64.exe
         env:
           GITHUB_TOKEN: ${{ secrets.GT_Token }}
   publish-new-formula:

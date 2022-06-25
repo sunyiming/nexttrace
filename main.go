@@ -9,6 +9,7 @@ import (
 	"os/signal"
 	"strings"
 	"time"
+	"runtime"
 
 	fastTrace "github.com/xgadget-lab/nexttrace/fast_trace"
 	"github.com/xgadget-lab/nexttrace/ipgeo"
@@ -78,7 +79,7 @@ func main() {
 
 	domain := flagApply()
 
-	if os.Getuid() != 0 {
+	if os.Getuid() != 0 && runtime.GOOS != "windows" {
 		log.Fatalln("Traceroute requires root/sudo privileges.")
 	}
 
